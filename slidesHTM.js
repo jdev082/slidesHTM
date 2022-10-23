@@ -15,4 +15,17 @@ function generateCards() {
             }
         });
 }
-window.onload = generateCards;
+
+function setWindowParams() {
+    fetch('./config.json')
+    .then((response) => response.json())
+    .then((data) => {
+        document.title = data.title;
+        link = document.createElement('link');
+        link.rel = data.favicon
+        document.getElementsByTagName('head')[0].appendChild(link);
+    });
+}
+
+generateCards()
+setWindowParams();
