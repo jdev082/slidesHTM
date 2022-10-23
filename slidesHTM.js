@@ -1,5 +1,5 @@
 function generateCards() {
-    fetch('./cards.json')
+    fetch('./slides.json')
         .then((response) => response.json())
         .then((data) => {
             const body = document.body;
