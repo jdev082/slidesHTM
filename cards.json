@@ -1,0 +1,18 @@
+{
+    "slides": {
+        "exampleSlide": {
+            "content": "Thank's for using slidesHTM",
+            "id": "1",
+            "bgcolor": "#242424",
+            "textcolor": "white",
+            "font": "Segoe UI"
+        },
+        "slides2": {
+            "content": "Thank's for using slidesHTM",
+            "id": "1",
+            "bgcolor": "#ab359b",
+            "textcolor": "white",
+            "font": "Arial"
+        }
+    }
+}   
