@@ -10,7 +10,7 @@
         },
         "slides2": {
             "content": "Thank's for using slidesHTM",
-            "id": "1",
+            "id": "2",
             "bgcolor": "#ab359b",
             "textcolor": "white",
             "font": "Arial",
@@ -18,10 +18,11 @@
         },
         "slides3": {
             "content": "This content is centered!",
-            "id": "1",
+            "id": "3",
             "bgcolor": "#2e3440",
             "textcolor": "white",
             "font": "Arial",
             "alignment": "center"
         }
+    }
 }
