@@ -1,7 +1,7 @@
 {
     "slides": {
         "exampleSlide": {
-            "content": "Thank's for using slidesHTM",
+            "content": "Create your very own unique slides!",
             "id": "1",
             "bgcolor": "#242424",
             "textcolor": "white",
@@ -9,8 +9,8 @@
             "alignment": "initial"
         },
         "slides2": {
-            "content": "Thank's for using slidesHTM",
-            "id": "2",
+            "content": "Display your content differently!",
+            "id": "1",
             "bgcolor": "#ab359b",
             "textcolor": "white",
             "font": "Arial",
