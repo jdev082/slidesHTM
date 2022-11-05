@@ -1,16 +1,20 @@
+var currentSlide = 1;
 function generateCards() {
     fetch('./slides.json')
         .then((response) => response.json())
         .then((data) => {
             const body = document.body;
-            for (const [slideId, slide, id, bgcolor, textcolor, font] of Object.entries(data.slides)) {
+            for (const [slideId, slide, id, bgcolor, textcolor, font, alignment] of Object.entries(data.slides)) {
                 const elem = document.createElement('div');
-                elem.style = 'height: 100vh;'
-                elem.innerText = slide.content;
+                elem.style = 'height: 100vh';
+                elem.innerHTML = slide.content;
                 elem.id = slide.id;
                 elem.style.backgroundColor = slide.bgcolor;
                 elem.style.color = slide.textcolor;
-                elem.style.fontFamily = slide.font
+                elem.style.fontFamily = slide.font;
+                elem.style.fontWeight = "600"; 
+                elem.style.padding = "10px 10px 10px 10px"; 
+                elem.style.textAlign = slide.alignment;
                 body.appendChild(elem);
             }
         });
@@ -26,6 +30,25 @@ function setWindowParams() {
         document.getElementsByTagName('head')[0].appendChild(link);
     });
 }
+function setUpButtons() {
+    const button = document.createElement('button');
+    button.innerText = 'Previous';
+    button.id = 'buttonLeft';
+    document.body.appendChild(button);
+    button.addEventListener('click', () => {
+        document.getElementById(currentSlide-1).scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
+        currentSlide--;
+    })
 
+    const button2 = document.createElement('button');
+    button2.innerText = 'Next';
+    button2.id = 'buttonRight';
+    document.body.appendChild(button2);
+    button2.addEventListener('click', () => {
+        document.getElementById(currentSlide+1).scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
+        currentSlide++;
+    })
+}
 generateCards()
 setWindowParams();
+setUpButtons();

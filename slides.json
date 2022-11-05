@@ -5,14 +5,24 @@
             "id": "1",
             "bgcolor": "#242424",
             "textcolor": "white",
-            "font": "Segoe UI"
+            "font": "Segoe UI",
+            "alignment": "initial"
         },
         "slides2": {
             "content": "Display your content differently!",
             "id": "1",
             "bgcolor": "#ab359b",
             "textcolor": "white",
-            "font": "Arial"
+            "font": "Arial",
+            "alignment": "initial"
+        },
+        "slides3": {
+            "content": "This content is centered!",
+            "id": "3",
+            "bgcolor": "#2e3440",
+            "textcolor": "white",
+            "font": "Arial",
+            "alignment": "center"
         }
     }
-}   
+}
