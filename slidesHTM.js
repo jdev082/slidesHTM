@@ -1,3 +1,4 @@
+var currentSlide = 1;
 function generateCards() {
     fetch('./slides.json')
         .then((response) => response.json())
@@ -29,6 +30,25 @@ function setWindowParams() {
         document.getElementsByTagName('head')[0].appendChild(link);
     });
 }
+function setUpButtons() {
+    const button = document.createElement('button');
+    button.innerText = 'Previous';
+    button.id = 'buttonLeft';
+    document.body.appendChild(button);
+    button.addEventListener('click', () => {
+        document.getElementById(currentSlide-1).scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
+        currentSlide--;
+    })
 
+    const button2 = document.createElement('button');
+    button2.innerText = 'Next';
+    button2.id = 'buttonRight';
+    document.body.appendChild(button2);
+    button2.addEventListener('click', () => {
+        document.getElementById(currentSlide+1).scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
+        currentSlide++;
+    })
+}
 generateCards()
 setWindowParams();
+setUpButtons();
