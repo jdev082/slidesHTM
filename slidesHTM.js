@@ -47,8 +47,12 @@ function setUpButtons() {
     button2.id = 'buttonRight';
     document.body.appendChild(button2);
     button2.addEventListener('click', () => {
-        document.getElementById(currentSlide + 1).scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
-        currentSlide++;
+        if (!document.getElementById(`${currentSlide + 1}`)) {
+            return;
+        } else {
+            document.getElementById(currentSlide + 1).scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
+            currentSlide++;
+        }
     })
 }
 generateCards()
