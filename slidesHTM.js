@@ -55,6 +55,11 @@ function setUpButtons() {
         }
     })
 }
-generateCards()
-setWindowParams();
-setUpButtons();
+
+try {
+    generateCards()
+    setWindowParams();
+    setUpButtons();
+} catch (error) {
+    alert(`slidesHTM has encountered an error: ${error}`);
+}
