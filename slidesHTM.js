@@ -12,8 +12,8 @@ function generateCards() {
                 elem.style.backgroundColor = slide.bgcolor;
                 elem.style.color = slide.textcolor;
                 elem.style.fontFamily = slide.font;
-                elem.style.fontWeight = "600"; 
-                elem.style.padding = "10px 10px 10px 10px"; 
+                elem.style.fontWeight = "600";
+                elem.style.padding = "10px 10px 10px 10px";
                 elem.style.textAlign = slide.alignment;
                 body.appendChild(elem);
             }
@@ -22,13 +22,13 @@ function generateCards() {
 
 function setWindowParams() {
     fetch('./config.json')
-    .then((response) => response.json())
-    .then((data) => {
-        document.title = data.title;
-        link = document.createElement('link');
-        link.rel = data.favicon
-        document.getElementsByTagName('head')[0].appendChild(link);
-    });
+        .then((response) => response.json())
+        .then((data) => {
+            document.title = data.title;
+            link = document.createElement('link');
+            link.rel = data.favicon
+            document.getElementsByTagName('head')[0].appendChild(link);
+        });
 }
 function setUpButtons() {
     const button = document.createElement('button');
@@ -36,8 +36,10 @@ function setUpButtons() {
     button.id = 'buttonLeft';
     document.body.appendChild(button);
     button.addEventListener('click', () => {
-        document.getElementById(currentSlide-1).scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
-        currentSlide--;
+        if (currentSlide > "1") {
+            document.getElementById(currentSlide - 1).scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
+            currentSlide--;
+        }
     })
 
     const button2 = document.createElement('button');
@@ -45,7 +47,7 @@ function setUpButtons() {
     button2.id = 'buttonRight';
     document.body.appendChild(button2);
     button2.addEventListener('click', () => {
-        document.getElementById(currentSlide+1).scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
+        document.getElementById(currentSlide + 1).scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
         currentSlide++;
     })
 }
