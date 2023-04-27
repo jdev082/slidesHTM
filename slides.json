@@ -23,6 +23,14 @@
             "textcolor": "white",
             "font": "Arial",
             "alignment": "center"
+        },
+        "slides4": {
+            "content": "Another slide!",
+            "id": "4",
+            "bgcolor": "red",
+            "textcolor": "white",
+            "font": "Arial",
+            "alignment": "right"
         }
     }
 }

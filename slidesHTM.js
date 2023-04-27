@@ -48,7 +48,7 @@ function setUpButtons() {
     document.body.appendChild(button2);
     button2.addEventListener('click', () => {
         if (!document.getElementById(`${currentSlide + 1}`)) {
-            return;
+            alert("End of slideshow or invalid slide ID!")
         } else {
             document.getElementById(currentSlide + 1).scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
             currentSlide++;
